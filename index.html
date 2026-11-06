@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freiddelee Sosa | Frontend Developer &amp; Estudiante de Informática UCLA</title>
+  
+  <!-- Meta tags SEO -->
+  <meta name="description" content="Portafolio profesional de Freiddelee Sosa, programadora Frontend especializada en HTML, CSS y JavaScript. Estudiante de Informática en la UCLA Barquisimeto.">
+  <meta name="author" content="Freiddelee Sosa">
+  <meta name="keywords" content="Freiddelee Sosa, Frontend Developer, Portafolio Web, HTML, CSS, JavaScript, UCLA Barquisimeto, Informática">
+
+  <!-- Open Graph / Redes Sociales -->
+  <meta property="og:title" content="Freiddelee Sosa | Frontend Developer">
+  <meta property="og:description" content="Portafolio profesional y dinámico de Freiddelee Sosa. Desarrollo Frontend con HTML5, CSS3 y JavaScript moderno.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Outfit & Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Hojas de Estilos -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- Lienzo interactivo de partículas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Luces ambientales de fondo -->
+  <div class="bg-glow-orb orb-1"></div>
+  <div class="bg-glow-orb orb-2"></div>
+  <div class="bg-glow-orb orb-3"></div>
+
+  <!-- ==========================================================================
+       BARRA DE NAVEGACIÓN
+       ========================================================================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#inicio" class="logo">
+        <span>&lt;</span>Freiddelee.dev <span>/&gt;</span>
+        <span class="logo-tag">UCLA</span>
+      </a>
+
+      <!-- Enlaces de navegación -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+        <li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
+        <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+        <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+        <li><a href="#educacion" class="nav-link">Educación</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      </ul>
+
+      <!-- Acciones de navegación -->
+      <div class="nav-actions">
+        <!-- Switch de tema -->
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Cambiar tema de color" title="Alternar modo claro / oscuro">
+          <!-- Icono Luna (modo oscuro) -->
+          <svg class="moon-icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <!-- Icono Sol (modo claro) -->
+          <svg class="sun-icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        </button>
+
+        <!-- Botón Contactar rápido -->
+        <a href="#contacto" class="btn btn-primary btn-sm d-none-mobile">¡Hablemos!</a>
+
+        <!-- Botón hamburguesa móvil -->
+        <button class="mobile-toggle-btn" id="mobile-toggle" aria-label="Abrir menú de navegación">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section class="hero-section" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <!-- Badge de disponibilidad -->
+          <div class="status-badge">
+            <span class="pulse-dot"></span>
+            Disponible para proyectos &amp; pasantías
+          </div>
+
+          <h1 class="hero-title">
+            Hola, soy <span class="gradient-text">Freiddelee Sosa</span>
+          </h1>
+
+          <div class="hero-subtitle">
+            <span id="typing-text">Frontend Developer</span><span class="typing-cursor">|</span>
+          </div>
+
+          <p class="hero-description">
+            Estudiante de <strong>Informática en la UCLA</strong> (Barquisimeto) y apasionada <strong>programadora Frontend</strong>. Me especializo en crear interfaces web elegantes, dinámicas, accesibles y optimizadas con <strong>HTML5, CSS3 y JavaScript</strong>.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#proyectos" class="btn btn-primary">
+              Ver Mis Proyectos
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+            <a href="#contacto" class="btn btn-secondary">
+              Contactar
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+            </a>
+          </div>
+
+          <!-- Redes y enlaces directos -->
+          <div class="hero-socials">
+            <span>Sígueme:</span>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon" title="GitHub">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="mailto:freiddeleesosa@gmail.com" class="social-icon" title="Enviar Correo">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Columna visual: Avatar e íconos flotantes -->
+        <div class="hero-visual">
+          <div class="avatar-wrapper animate-float">
+            <div class="avatar-glow-ring"></div>
+            <img src="assets/images/avatar.svg" alt="Freiddelee Sosa - Frontend Developer" class="avatar-image">
+            
+            <!-- Chips de tecnologías flotantes -->
+            <div class="tech-chip chip-1 animate-float-reverse">
+              <svg viewBox="0 0 24 24" fill="#e34f26"><path d="M12 2l10 3.6-1.5 14.4L12 22l-8.5-2L2 5.6 12 2z"/></svg>
+              <span>HTML5</span>
+            </div>
+            <div class="tech-chip chip-2 animate-float">
+              <svg viewBox="0 0 24 24" fill="#1572b6"><path d="M12 2l10 3.6-1.5 14.4L12 22l-8.5-2L2 5.6 12 2z"/></svg>
+              <span>CSS3</span>
+            </div>
+            <div class="tech-chip chip-3 animate-float-reverse">
+              <svg viewBox="0 0 24 24" fill="#f7df1e"><path d="M3 3h18v18H3V3zm14.5 13.5c-.8.5-1.8.8-2.8.8-2.6 0-3.9-1.4-3.9-3.7 0-2.3 1.4-3.7 3.8-3.7 1 0 1.9.3 2.5.7l-.6 1.4c-.6-.4-1.2-.6-1.9-.6-1.4 0-2.2.8-2.2 2.2 0 1.5.8 2.2 2.2 2.2.7 0 1.3-.2 1.8-.5l.6 1.2z"/></svg>
+              <span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barra de métricas y datos clave -->
+      <div class="container">
+        <div class="metrics-bar">
+          <div class="metric-item">
+            <span class="metric-number" data-target="15" data-suffix="+">0</span>
+            <span class="metric-label">Proyectos &amp; Prácticas</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-number" data-target="100" data-suffix="%">0</span>
+            <span class="metric-label">Pasión por el Frontend</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-number" data-target="100" data-suffix="%">0</span>
+            <span class="metric-label">Diseño Responsive</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-number" data-target="1" data-suffix=" #UCLA">0</span>
+            <span class="metric-label">Estudiante Informática</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECCIÓN: SOBRE MÍ
+         ========================================================================== -->
+    <section class="section" id="sobre-mi">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">&lt;Sobre Mí /&gt;</span>
+          <h2 class="section-title">Pasión por la tecnología y el diseño web</h2>
+          <p class="section-subtitle">Conoce mi trayectoria, valores y lo que me impulsa cada día.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Tarjeta de presentación -->
+          <div class="about-text-card">
+            <h3 style="font-size: 1.4rem; font-weight: 700; color: var(--primary);">
+              ¡Hola! Soy Freiddelee Sosa
+            </h3>
+            <p>
+              Actualmente estudio <strong>Informática en la Universidad Centroccidental Lisandro Alvarado (UCLA)</strong> en Barquisimeto, Venezuela. Mi fascinación por la programación comenzó con el deseo de transformar ideas abstractas en productos interactivos que cualquier usuario pueda experimentar en su pantalla.
+            </p>
+            <p>
+              Me he especializado fuertemente en el <strong>desarrollo Frontend</strong> con <strong>HTML5, CSS3 y JavaScript puro</strong>. Creo con convicción que dominar las bases de la web permite construir interfaces más veloces, accesibles y robustas antes de depender de cualquier framework externo.
+            </p>
+            <p>
+              Mi meta es integrarme a proyectos desafiantes donde pueda aportar creatividad, código limpio y seguir aprendiendo continuamente en un entorno profesional.
+            </p>
+
+            <div style="display: flex; gap: 1rem; margin-top: 0.5rem; flex-wrap: wrap;">
+              <span class="skill-tag-pill">📍 Barquisimeto, Venezuela</span>
+              <span class="skill-tag-pill">🎓 Estudiante UCLA</span>
+              <span class="skill-tag-pill">💻 Frontend Specialist</span>
+            </div>
+          </div>
+
+          <!-- Columna de fortalezas clave -->
+          <div class="about-cards-col">
+            <div class="feature-mini-card">
+              <div class="feature-icon-box">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div class="feature-info">
+                <h4>Diseño 100% Adaptable</h4>
+                <p>Sitios web testeados y optimizados para ofrecer una experiencia perfecta en teléfonos, tablets y computadoras.</p>
+              </div>
+            </div>
+
+            <div class="feature-mini-card">
+              <div class="feature-icon-box">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              </div>
+              <div class="feature-info">
+                <h4>Código Limpio y Semántico</h4>
+                <p>Estructuras HTML5 semánticas que favorecen la accesibilidad (A11y), el SEO y la facilidad de mantenimiento.</p>
+              </div>
+            </div>
+
+            <div class="feature-mini-card">
+              <div class="feature-icon-box">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <div class="feature-info">
+                <h4>Dinamismo con JavaScript</h4>
+                <p>Manipulación avanzada del DOM, eventos, consumo de APIs (Fetch), animaciones y lógica interactiva sin dependencias pesadas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECCIÓN: HABILIDADES TÉCNICAS
+         ========================================================================== -->
+    <section class="section" id="habilidades" style="background: rgba(255,255,255,0.01);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">&lt;Habilidades /&gt;</span>
+          <h2 class="section-title">Mi Stack Tecnológico</h2>
+          <p class="section-subtitle">Las herramientas y tecnologías que utilizo para dar vida a las aplicaciones web.</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Tarjeta 1: Frontend Core -->
+          <div class="skill-category-card">
+            <div class="skill-category-header">
+              <div class="skill-cat-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              </div>
+              <h3>Frontend Core</h3>
+            </div>
+            <div class="skill-bars-list">
+              <div class="skill-bar-item">
+                <div class="skill-info-row">
+                  <span>HTML5 Semántico</span>
+                  <span>95%</span>
+                </div>
+                <div class="skill-track"><div class="skill-progress" style="width: 95%;"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-info-row">
+                  <span>CSS3 / Flexbox / Grid</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-track"><div class="skill-progress" style="width: 90%;"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-info-row">
+                  <span>JavaScript (ES6+)</span>
+                  <span>88%</span>
+                </div>
+                <div class="skill-track"><div class="skill-progress" style="width: 88%;"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-info-row">
+                  <span>Responsive Web Design</span>
+                  <span>92%</span>
+                </div>
+                <div class="skill-track"><div class="skill-progress" style="width: 92%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 2: Lógica & JavaScript Moderno -->
+          <div class="skill-category-card">
+            <div class="skill-category-header">
+              <div class="skill-cat-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <h3>Capacidades JS</h3>
+            </div>
+            <div class="skill-tags-group">
+              <span class="skill-tag-pill">⚡ DOM Manipulation</span>
+              <span class="skill-tag-pill">🔄 Fetch API / REST APIs</span>
+              <span class="skill-tag-pill">⏳ Async / Await</span>
+              <span class="skill-tag-pill">💾 LocalStorage / SessionStorage</span>
+              <span class="skill-tag-pill">🎯 Event Handling</span>
+              <span class="skill-tag-pill">🎨 Animaciones CSS &amp; Keyframes</span>
+              <span class="skill-tag-pill">📐 UI Components Reusables</span>
+              <span class="skill-tag-pill">🧩 Lógica Modular ES Modules</span>
+            </div>
+          </div>
+
+          <!-- Tarjeta 3: Herramientas y Formación -->
+          <div class="skill-category-card">
+            <div class="skill-category-header">
+              <div class="skill-cat-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+              </div>
+              <h3>Herramientas &amp; Métodos</h3>
+            </div>
+            <div class="skill-tags-group">
+              <span class="skill-tag-pill">🛠️ Git &amp; GitHub</span>
+              <span class="skill-tag-pill">🚀 Render Deployment</span>
+              <span class="skill-tag-pill">💻 Visual Studio Code</span>
+              <span class="skill-tag-pill">🎨 Figma (UI Design)</span>
+              <span class="skill-tag-pill">🔍 Chrome DevTools</span>
+              <span class="skill-tag-pill">🎓 Algoritmos &amp; Estructuras (UCLA)</span>
+              <span class="skill-tag-pill">🤝 Trabajo en Equipo</span>
+              <span class="skill-tag-pill">💡 Resolución de Problemas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECCIÓN: PROYECTOS DESTACADOS
+         ========================================================================== -->
+    <section class="section" id="proyectos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">&lt;Proyectos /&gt;</span>
+          <h2 class="section-title">Trabajos y Aplicaciones</h2>
+          <p class="section-subtitle">Una muestra de proyectos interactivos desarrollados con tecnologías web fundamentales.</p>
+        </div>
+
+        <!-- Filtros de Proyectos -->
+        <div class="projects-filter-bar">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="js">JavaScript ES6+</button>
+          <button class="filter-btn" data-filter="ui">Diseño Web</button>
+          <button class="filter-btn" data-filter="ucla">Académicos UCLA</button>
+        </div>
+
+        <!-- Contenedor dinámico inyectado por JS -->
+        <div class="projects-grid" id="projects-container">
+          <!-- Renderizado dinámico desde js/projects-data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECCIÓN: EDUCACIÓN & TRAYECTORIA ACADÉMICA (UCLA)
+         ========================================================================== -->
+    <section class="section" id="educacion">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">&lt;Educación /&gt;</span>
+          <h2 class="section-title">Formación Académica</h2>
+          <p class="section-subtitle">Mi camino educativo y crecimiento como profesional de la informática.</p>
+        </div>
+
+        <div class="education-section-card">
+          <div class="timeline">
+            <!-- Item UCLA -->
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-header">
+                <h3 class="timeline-title">Licenciatura / Ingeniería en Informática</h3>
+                <span class="timeline-period">En Curso</span>
+              </div>
+              <div class="timeline-institution">
+                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                Universidad Centroccidental Lisandro Alvarado (UCLA) • Barquisimeto, Venezuela
+              </div>
+              <p class="timeline-description">
+                Formación integral en ciencias de la computación, abarcando algoritmos y programación estructurada, estructuras de datos avanzadas, modelado de bases de datos relacionales, arquitectura del computador y metodologías de desarrollo de software.
+              </p>
+            </div>
+
+            <!-- Item Frontend Self-Taught -->
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-header">
+                <h3 class="timeline-title">Especialización Autodidacta en Desarrollo Frontend</h3>
+                <span class="timeline-period">Continuo</span>
+              </div>
+              <div class="timeline-institution">
+                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                Proyectos Prácticos, Cursos en Línea &amp; Documentación MDN Web Docs
+              </div>
+              <p class="timeline-description">
+                Perfeccionamiento continuo en los estándares web modernos: manipulación avanzada del DOM con Vanilla JS, diseño adaptativo fluido sin frameworks, optimización de rendimiento y accesibilidad web.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECCIÓN: CONTACTO
+         ========================================================================== -->
+    <section class="section" id="contacto">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">&lt;Contacto /&gt;</span>
+          <h2 class="section-title">¡Creemos Algo Juntos!</h2>
+          <p class="section-subtitle">¿Tienes un proyecto, propuesta de pasantía o quieres conectar? Estoy a un mensaje de distancia.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Canales de comunicación directa -->
+          <div class="contact-info-col">
+            <!-- Email -->
+            <div class="contact-direct-card">
+              <div class="contact-direct-left">
+                <div class="contact-icon-bubble">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </div>
+                <div>
+                  <div class="contact-label">Correo Electrónico</div>
+                  <div class="contact-val">freiddeleesosa@gmail.com</div>
+                </div>
+              </div>
+              <button class="copy-btn" data-copy="freiddeleesosa@gmail.com" title="Copiar correo">
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                Copiar
+              </button>
+            </div>
+
+            <!-- Ubicación -->
+            <div class="contact-direct-card">
+              <div class="contact-direct-left">
+                <div class="contact-icon-bubble">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <div>
+                  <div class="contact-label">Ubicación Actual</div>
+                  <div class="contact-val">Barquisimeto, Estado Lara · Venezuela</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Universidad -->
+            <div class="contact-direct-card">
+              <div class="contact-direct-left">
+                <div class="contact-icon-bubble">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                </div>
+                <div>
+                  <div class="contact-label">Universidad</div>
+                  <div class="contact-val">UCLA (Decanato de Ciencias y Tecnología)</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- GitHub -->
+            <div class="contact-direct-card">
+              <div class="contact-direct-left">
+                <div class="contact-icon-bubble">
+                  <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                </div>
+                <div>
+                  <div class="contact-label">Perfil de Código</div>
+                  <div class="contact-val">github.com/freiddeleesosa</div>
+                </div>
+              </div>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="copy-btn">Visitar</a>
+            </div>
+          </div>
+
+          <!-- Formulario interactivo -->
+          <div class="contact-form-card">
+            <h3 style="font-size: 1.35rem; font-weight: 700; margin-bottom: 1.5rem;">Envíame un mensaje directo</h3>
+            <form class="contact-form" id="contact-form">
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Nombre Completo</label>
+                <input type="text" id="contact-name" class="form-input" placeholder="Tu nombre o empresa" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Correo Electrónico</label>
+                <input type="email" id="contact-email" class="form-input" placeholder="tu-correo@ejemplo.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Mensaje</label>
+                <textarea id="contact-message" class="form-textarea" placeholder="Cuéntame sobre tu propuesta, proyecto o consulta..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+                Enviar Mensaje
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       MODAL DE DETALLES DEL PROYECTO
+       ========================================================================== -->
+  <div class="modal-overlay" id="project-modal">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modal-close" aria-label="Cerrar ventana">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+      <img src="" alt="" class="modal-image" id="modal-img">
+      <div class="section-tag" id="modal-category" style="margin-bottom: 0.6rem;">Categoría</div>
+      <h3 class="modal-title" id="modal-title">Título del Proyecto</h3>
+      <p class="modal-desc" id="modal-desc">Descripción completa del proyecto...</p>
+      
+      <div style="margin-bottom: 1.5rem;">
+        <h4 style="font-size: 0.95rem; margin-bottom: 0.6rem; color: var(--text-main);">Tecnologías implementadas:</h4>
+        <div class="project-tech-stack" id="modal-tags"></div>
+      </div>
+
+      <div class="project-links">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" id="modal-github" style="flex: 1;">
+          <svg fill="currentColor" viewBox="0 0 24 24" width="16" height="16"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          Ver Código
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" id="modal-live" style="flex: 1;">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          Abrir Demo
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       TOAST NOTIFICATION
+       ========================================================================== -->
+  <div class="toast" id="toast">
+    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" color="var(--success)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    <span id="toast-message">Mensaje</span>
+  </div>
+
+  <!-- Botón Volver Arriba -->
+  <button class="back-to-top-btn" id="back-to-top" aria-label="Volver arriba">
+    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"/></svg>
+  </button>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-text">
+        © 2026 <strong>Freiddelee Sosa</strong>. Desarrollado con 💜 desde Barquisimeto, Venezuela.
+      </div>
+      <div style="display: flex; gap: 0.8rem; align-items: center; font-size: 0.85rem; color: var(--text-dim);">
+        <span>HTML5</span> • <span>CSS3</span> • <span>JavaScript</span> • <span style="color: var(--primary);">UCLA</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/particles.js"></script>
+  <script src="js/projects-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+

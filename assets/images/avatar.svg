@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="avatarBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="50%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#db2777"/>
+    </linearGradient>
+    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#312e81"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Circle with subtle glow border -->
+  <circle cx="200" cy="200" r="185" fill="#0f172a" stroke="url(#avatarBg)" stroke-width="6"/>
+  <circle cx="200" cy="200" r="170" fill="url(#avatarBg)" opacity="0.15"/>
+
+  <!-- Code elements in background -->
+  <text x="60" y="110" fill="#a855f7" opacity="0.3" font-family="monospace" font-size="20">&lt;coder&gt;</text>
+  <text x="280" y="290" fill="#38bdf8" opacity="0.3" font-family="monospace" font-size="20">&lt;/dev&gt;</text>
+  <text x="70" y="270" fill="#ec4899" opacity="0.3" font-family="monospace" font-size="16">{ UCLA }</text>
+
+  <!-- Developer Silhouette / Illustration -->
+  <!-- Shoulders & Hoodie -->
+  <path d="M 100 370 C 100 300 140 280 200 280 C 260 280 300 300 300 370 Z" fill="#1e1b4b"/>
+  <!-- Hoodie neckline / inner -->
+  <path d="M 170 285 L 200 330 L 230 285 Z" fill="#4338ca"/>
+  
+  <!-- Neck -->
+  <rect x="180" y="230" width="40" height="60" rx="8" fill="#fcd34d"/>
+  
+  <!-- Back Hair -->
+  <ellipse cx="200" cy="190" rx="75" ry="85" fill="#18181b"/>
+  <path d="M 125 190 Q 110 270 140 310 Q 155 260 150 200 Z" fill="#18181b"/>
+  <path d="M 275 190 Q 290 270 260 310 Q 245 260 250 200 Z" fill="#18181b"/>
+
+  <!-- Face -->
+  <ellipse cx="200" cy="180" rx="55" ry="65" fill="#fde68a"/>
+  
+  <!-- Front Hair bangs -->
+  <path d="M 145 155 Q 200 120 255 155 Q 240 185 200 145 Q 160 185 145 155 Z" fill="#27272a"/>
+  
+  <!-- Modern Stylish Glasses -->
+  <rect x="160" y="165" width="32" height="24" rx="7" fill="none" stroke="#6366f1" stroke-width="4"/>
+  <rect x="208" y="165" width="32" height="24" rx="7" fill="none" stroke="#6366f1" stroke-width="4"/>
+  <line x1="192" y1="177" x2="208" y2="177" stroke="#6366f1" stroke-width="4"/>
+  
+  <!-- Eyes behind glasses -->
+  <circle cx="176" cy="177" r="4" fill="#1e1b4b"/>
+  <circle cx="224" cy="177" r="4" fill="#1e1b4b"/>
+  <circle cx="178" cy="175" r="1.5" fill="#ffffff"/>
+  <circle cx="226" cy="175" r="1.5" fill="#ffffff"/>
+
+  <!-- Smile -->
+  <path d="M 188 215 Q 200 226 212 215" fill="none" stroke="#b45309" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Cheeks blush -->
+  <circle cx="162" cy="205" r="6" fill="#f43f5e" opacity="0.35"/>
+  <circle cx="238" cy="205" r="6" fill="#f43f5e" opacity="0.35"/>
+
+  <!-- Modern Headphones / Headset -->
+  <path d="M 135 180 A 65 65 0 0 1 265 180" fill="none" stroke="#8b5cf6" stroke-width="8" stroke-linecap="round"/>
+  <rect x="130" y="165" width="12" height="32" rx="6" fill="#a855f7"/>
+  <rect x="258" y="165" width="12" height="32" rx="6" fill="#a855f7"/>
+
+  <!-- Floating Frontend Icons -->
+  <g transform="translate(45, 160)">
+    <circle cx="18" cy="18" r="22" fill="#1e293b" stroke="#f97316" stroke-width="2"/>
+    <text x="8" y="24" fill="#f97316" font-family="sans-serif" font-weight="900" font-size="14">HTML</text>
+  </g>
+  <g transform="translate(320, 160)">
+    <circle cx="18" cy="18" r="22" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="8" y="24" fill="#3b82f6" font-family="sans-serif" font-weight="900" font-size="14">CSS</text>
+  </g>
+  <g transform="translate(182, 335)">
+    <circle cx="18" cy="18" r="20" fill="#1e293b" stroke="#eab308" stroke-width="2"/>
+    <text x="11" y="24" fill="#eab308" font-family="sans-serif" font-weight="900" font-size="14">JS</text>
+  </g>
+</svg>
+
